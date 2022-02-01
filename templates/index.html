@@ -1,0 +1,107 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>NEWS WEB APPLICATION</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="banner">
+			<nav>
+				<a href="#"><img src="static/logo.jpg" class="logo"></a>
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="login.html">LOGIN</a></li>
+					<li><a href="https://www.bbc.com/news">TODAY'S NEWS</a></li>
+					<li><a href="#">MAINHEADLINES</a></li>
+					<li><a href="#">ARTICLES</a></li>
+					<li><a href="#footer">CONTACT US</a></li>
+				</ul>
+			</nav>
+			<h1>NEWS WEB <br>APPLICATION</h1>
+			<button type="button">EXPLORE >>></button>
+			<div class="indicator">
+				<span></span>
+				<span></span>
+				<span class="active"></span>
+			</div>
+			<div class="panel">
+				<p>You can explore more about the NEWS as well as the Top Headlines , Articles , etc.</p>
+				<button type="button">MORE NEWS , HEADLINES , ARTICLES...</button>
+			</div>
+		</div>
+		<div class="news">
+			<div class = "head">>>> MAINHEADLINES</div>
+			{% for title,desc,img,p_date,url in contents %}
+			<div class="wrapper">
+				<div class="item"><a href="{{url}}"><img src="{{img}}"></a></div>
+				<div class = "c-box">
+				<div class="content"><a href="{{url}}"><h2>{{title}}</h2></a></div>
+				<div class="content"><a href="{{url}}"><p>{{desc}}</p></a></div>
+				<div class="content"><p>PUBLISH DATE : </p><p>{{p_date}}</p></div>
+				</div>
+			</div> 
+			{% endfor %}  
+		</div>
+		<div class="container">
+			<div class="content">
+				<div class="left-side">
+					<div class="address details">
+						<i class="fas fa-map-marker-alt"></i>
+						<div class="topic">Address</div>
+						<div class="text-one">Bhilai House , Durg</div>
+						<div class="text-two">Chhattisgarh - 491001</div>
+					</div>
+					<div class="phone details">
+						<i class="fas fa-phone-alt"></i>
+						<div class="topic">Phone</div>
+						<div class="text-one">0788-2359297</div>
+						<div class="text-two">0788-2359297</div>
+					</div>
+					<div class="email details">
+						<i class="fas fa-envelope"></i>
+						<div class="topic">Email</div>
+						<div class="text-one">adityajai1822@gmail.com</div>
+						<div class="text-two">vickykumarsinha@gmail.com</div>
+					</div>
+				</div>
+				<div class="right-side">
+					<div class="topic-text">SEND US A MESSAGE</div>
+							<p>If you have any sort of query related to our application , Then , do message from here. It's our pleasure to help you guys.</p>
+							<form action="#">
+								<div class="input-box">
+									<input type="text" placeholder="Enter your name">
+								</div>
+								<div class="input-box">
+									<input type="text" placeholder="Enter your email">
+								</div>
+								<div class="input-box message-box">
+									<input type="text" placeholder="Enter your message">
+								</div>
+								<div class="button">
+									<input type="button" value="SEND NOW >>>">
+								</div>
+							</form>
+				</div>
+			</div>
+		</div>
+		<section id="footer">
+			<div class="footer-content">
+				<h4>・NEWS WEB APPLICATION USING NEWSAPI & PYTHON FLASK</h4>
+				<p>- 7 TH | SEMESTER | MINOR PROJECT</p>
+				<ul class="socials">
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<p>copyright &copy; 2021 BIT Durg. Built & designed by <span>Vikramaditya Bhagat & Vicky Kumar Sinha</p>
+			</div>
+		</section>
+	</body>
+</html>
